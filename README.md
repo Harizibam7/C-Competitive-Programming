@@ -1,2 +1,2 @@
-# Day-1-c-c-
+# C-Come-c-c-
 Competititve programming
