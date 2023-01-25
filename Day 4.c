@@ -38,3 +38,26 @@ int main()
 
 
 }
+
+2. Implement a program that differentiate between ordinary arguments which are passed by value, and pointer arguments, which are passed by reference
+#include<stdio.h>
+void swp(int *a,int *b)
+{
+  *a=20;
+  *b=10;
+}
+void swap(int a,int b)
+{
+  a=20;
+  b=10;
+}
+int main()
+{
+  int a=10;
+  int b=20;
+  swap(a,b);
+  printf(" %d %d ",a,b);
+  swp(&a,&b);
+  printf("\n %d %d",a,b);
+  return 0;
+}
