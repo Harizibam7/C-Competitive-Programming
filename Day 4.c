@@ -61,3 +61,49 @@ int main()
   printf("\n %d %d",a,b);
   return 0;
 }
+
+3. Read a line of text, store it in a one-dimensional character array, and then analyze the individual array elements. An appropriate counter will be incremented for each character. The value of each counter (number of vowels, number of consonants, etc.) can then be written out after all of the characters have been analyzed.
+
+#include<stdio.h>
+
+int main()
+{
+  char a[]="Rule 1 :Hello coder Harizibam (It's time Coding think like coder)";
+  int alphabets_count=0;
+  int number_count=0;
+  int symbols_count=0;
+  int vowels=0;
+  int space_count=0;
+  int size=sizeof(a)/sizeof(a[0]);
+  for(int i=0;i<size;i++)
+  {
+    if(((int)a[i]>=65)&&((int)a[i]<=90) || (((int)a[i]>=97)&&((int)a[i]<=122)))
+    {
+      if(a[i]=='a' || a[i]=='e' || a[i]=='i' || a[i]=='o' || a[i]=='u' || a[i]=='A' || a[i]=='E' || a[i]=='I' || a[i]=='O' || a[i]=='U')
+      {
+        vowels++;
+      }
+      alphabets_count++;
+    }
+    else if(((int)a[i]>=48)&&((int)a[i]<=57) )
+    {
+      number_count++;
+    }
+    else if((int)a[i]==32)
+    {
+      space_count++;
+    }
+    else
+    {
+      symbols_count++;
+    }
+  }
+  printf("\n Number of Alphabets : %d",alphabets_count);
+  printf("\n Number of Numbers : %d",number_count);
+  printf("\n Number of Symbols : %d",symbols_count);
+  printf("\n Number of Vowels : %d",vowels);
+  printf("\n Number of space : %d",space_count);
+  printf("\n NUmber of consontant : %d",alphabets_count-vowels);
+  return 0;
+}
+
